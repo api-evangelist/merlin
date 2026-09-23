@@ -1,0 +1,56 @@
+generated: '2026-09-23'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 3
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - other
+  - website
+hosts:
+- host: api.merlinnetwork.org
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: merlinnetwork.org
+  role: api
+  relation: own
+- host: merlinnetwork.org
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Newsroom
+  - Website
+  - Documentation
+  - GettingStarted
+  - Support
+  - TermsOfService
+  - PrivacyPolicy
+  serves:
+  - docs
+  - cdn
+  vendor: fastly
+  registrable_domain: merlinnetwork.org
+  role: website
+  relation: own
+- host: wizard.merlinnetwork.org
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: merlinnetwork.org
+  role: other
+  relation: own

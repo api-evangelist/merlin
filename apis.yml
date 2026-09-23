@@ -1,23 +1,81 @@
 aid: merlin
+
 name: Merlin
-description: 'Merlin is a company surfaced via the API Evangelist harvest backlog (source: music) and
-  added to the network as a stub for full-pipeline profiling.'
+
+image: https://merlinnetwork.org/wp-content/uploads/2023/09/merlin-site-image.png
+
+description: Merlin is a global digital music licensing organization that represents independent music companies, providing them access to licensing
+  deals, tools, and data insights. It operates a membership platform called Wizard, offers technology solutions, and publishes reports and industry
+  insights to support its members in navigating the digital music ecosystem.
+
 url: https://raw.githubusercontent.com/api-evangelist/merlin/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:music
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-23 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-23'
+
 modified: '2026-09-23'
+
 tags:
 - Company
-apis: []
+- Music
+- Licensing
+- Technology
+- Membership
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/merlin-hosts.yml
+- type: Vendors
+  url: vendors/merlin-vendors.yml
+- type: Newsroom
+  url: https://merlinnetwork.org/news
+- type: DomainSecurity
+  url: security/merlin-domain-security.yml
 - type: Website
   url: https://merlinnetwork.org/
+- type: Documentation
+  url: https://merlinnetwork.org/technology/
+- type: GettingStarted
+  url: https://merlinnetwork.org/becoming-a-member/
+- type: Support
+  url: https://merlinnetwork.org/contact/
+- type: TermsOfService
+  url: https://merlinnetwork.org/terms-and-conditions/
+- type: PrivacyPolicy
+  url: https://merlinnetwork.org/privacy-policy/
+
+apis:
+- name: Merlin API
+  description: API for Merlin's digital music licensing platform, documented on the Technology page.
+  humanURL: https://merlinnetwork.org/technology/
+  baseURL: null
+  aid: merlin:merlin-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Technology page loads content via JavaScript, preventing retrieval of a machine‑readable OpenAPI spec.
+  evidence:
+  - url: https://merlinnetwork.org/technology/
+    status: 200
+  checked: 2026-09-23
+x-enrichment:
+  date: '2026-09-23'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
